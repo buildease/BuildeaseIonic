@@ -1,0 +1,46 @@
+<ion-content>
+  <div class="login-logo">
+    <ion-title class="login-text">Sign Up</ion-title>
+  </div>
+  <form>
+    <ion-list>
+      <ion-item>
+        <ion-label class="label-item" position="stacked">Username</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="label-item" position="stacked">Email</ion-label>
+        <ion-input type="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="label-item" position="stacked">Phone Number</ion-label>
+        <ion-input type="Number"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="label-item" position="stacked">Password</ion-label>
+        <ion-input type="Password"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="label-item" position="stacked">Confirm-Password</ion-label>
+        <ion-input type="Password"></ion-input>
+      </ion-item>
+
+
+      <ion-item lines='none' class="agree">
+        <ion-radio value="enemies"></ion-radio>
+        <a>&nbsp; Agree with Terms and Conditions</a>
+      </ion-item>
+    </ion-list>
+    <ion-button lines='none' expand="block" color="tertiary-shade" class="ion-text-capitalize sign-in-btn"
+      (click)="login()">Sign Up</ion-button>
+    <ion-list lines='none'>
+      <div class="register center">
+        <a routerLink="/login">I'm already a member</a>
+      </div>
+    </ion-list>
+  </form>
+</ion-content>

@@ -1,0 +1,34 @@
+<ion-content>
+  <ion-toolbar class="tool-bar">
+    <ion-title class="login-logo">
+      <ion-title class="login-text">Forgot Password</ion-title>
+    </ion-title>
+    <ion-buttons slot="start" (click)="myBackButton()">
+      <ion-icon slot="start" class="arrow-icon" name="arrow-back"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <!-- <div class="login-logo">
+    <ion-title class="login-text">Forgot Password</ion-title>
+  </div> -->
+  <div class="center logo-email">
+    <img src="assets/images/email3.PNG" alt="login logo" width="120">
+  </div>
+  <div class="">
+    <ion-title class="title-password">Enter your email address and we'll send you a link to reset your password
+    </ion-title>
+  </div>
+  <form>
+   
+    <ion-list>
+    
+      <ion-item>
+        <ion-label class="label-item" position="stacked">Email</ion-label>
+        <ion-input type="email"></ion-input>
+      </ion-item>
+
+    </ion-list>
+    <ion-button lines='none' expand="block" color="tertiary-shade" class="ion-text-capitalize sign-in-btn"
+      (click)="login()">Done</ion-button>
+  </form>
+</ion-content>

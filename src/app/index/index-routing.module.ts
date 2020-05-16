@@ -1,0 +1,43 @@
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+
+import { IndexPage } from './index.page';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: IndexPage,
+    children:[
+      {
+        path:'',
+        loadChildren:'../pages/welcome/welcome.module#WelcomePageModule'
+      },
+      {
+        path:'login',
+        loadChildren:'../pages/login/login.module#LoginPageModule'
+      },
+      {
+        path:'signup',
+        loadChildren:'../pages/signup/signup.module#SignupPageModule'
+      },
+      {
+        path:'forgotpassword',
+        loadChildren:'../pages/forgotpassword/forgotpassword.module#ForgotpasswordPageModule'
+      },
+      {
+        path:'resetpassword',
+        loadChildren:'../pages/resetpassword/resetpassword.module#ResetpasswordPageModule'
+      },
+      {
+        path:'sendotpemail',
+        loadChildren:'../pages/sendotpemail/sendotpemail.module#SendotpemailPageModule'
+      }
+    ]
+  }
+];
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
+})
+export class IndexPageRoutingModule {}

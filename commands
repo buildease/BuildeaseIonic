@@ -1,0 +1,3 @@
+ ng generate page pages/settings
+ ionic serve
+ https://ionicons.com/

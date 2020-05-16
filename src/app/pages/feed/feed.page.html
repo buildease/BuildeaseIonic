@@ -1,0 +1,26 @@
+<ion-header  no-header>
+  <ion-toolbar>
+   <ion-segment mod="md" [(ngModel)]="segment" (ionChange)="segmentChanged($event)">
+     <ion-segment-button value="0">
+       <ion-icon name="phone-portrait"></ion-icon>
+       Mobile
+     </ion-segment-button>
+     <ion-segment-button  value="1">
+      <ion-icon name="watch"></ion-icon>
+      Watches
+    </ion-segment-button>
+    <ion-segment-button  value="2">
+      <ion-icon name="headset"></ion-icon>
+      Headset
+    </ion-segment-button>
+   </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides #slides pager="false" [options]="sliderOptions" (ionSlidesChange)="slideShanged(slides)" (ionSlidesDidLoad)="slideShanged(slides)">
+    <ion-slide>1</ion-slide>
+    <ion-slide>2</ion-slide>
+    <ion-slide>3</ion-slide>
+  </ion-slides>
+</ion-content>
