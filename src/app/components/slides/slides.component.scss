@@ -1,6 +1,11 @@
 ion-slide{
     padding: 60px 7px;
     display: block;
+    .desc p{
+        color: #255d83;
+        font-size: 18px;
+        text-align: left;
+    }
 }
 
 
@@ -8,6 +13,7 @@ ion-slide{
     text-align: center;
     text-decoration: underline;
     font-size: 32px;
+    padding-bottom: 20px;
     font-family: monospace;
 }
 .rainbow_text_animated {
@@ -28,3 +34,69 @@ ion-slide{
         background-position: 100% 0;
     }
 }
+
+.ion-text-wrap h2{
+    color: #745984;
+    font-size: 30px;
+    margin: 30px 0px 20px 20px;
+    font-weight: bold;
+}
+
+.skip{
+    float: right;
+    padding-right: 30px;
+    font-size: 25px;
+    color: #255d83;
+}
+
+.slide-menu{
+    margin: 20px;
+}
+.success {
+    -webkit-animation: seconds 1.0s forwards;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-delay: 5s;
+    animation: seconds 1.0s forwards;
+    animation-iteration-count: 1;
+    animation-delay: 5s;
+    position: relative;
+      
+  }
+  @-webkit-keyframes seconds {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      left: -9999px; 
+      position: absolute;   
+    }
+  }
+  @keyframes seconds {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      left: -9999px;
+      position: absolute;     
+    }
+  }
+
+  .explore{
+    text-align: center;
+    float: initial;
+    display: inline-block;
+    
+  }
+  ion-button{
+    text-transform: capitalize;
+    color: #fff;
+    font-size: 20px;
+  }
+  .explore-background{
+     --background: linear-gradient(#306589, #725b98);
+     border-radius: unset;
+     height: 50px;
+     width: 100%;
+  }

@@ -1,0 +1,169 @@
+ion-footer{
+    background-image: url('/assets/splashImg/pngguru.png');
+    opacity: 0.2;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 200px;
+}
+ion-content{
+    height: 49.1%;
+    display: block;
+    vertical-align: middle;
+}
+
+.skip-text{
+    border-radius: 1px;
+    float: right;
+    color: #306589;
+    margin-bottom: 100px;
+    border: 1px solid;
+    border-radius: 5px;
+    margin-right: 5px;
+    margin-top: 20px;
+    padding: 6px 25px;
+}
+
+
+$bgColor: rgb(159, 182, 197);
+$sunColor:  lighten(#ACB4BB, 20);
+$moonColor: lighten(#ACB4BB, 20);
+$houseColor: #816d62;
+$windowColor: #c2b56a; 
+$circleSize: 18rem;
+$objSize: 4.5rem;
+$houseTopSize: 1.5rem;
+$houseMiddleSize: 3.5rem;
+
+.background {
+    .circle {
+        border: .65rem solid rgba(#fff, 0.7);;
+        border-radius: 50%;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        height: $circleSize;
+        width: $circleSize;
+    }
+    $i: 0;
+    $total: 4;
+    
+    .lines {
+        animation: colors 10s ease-in-out infinite;
+        .line {
+            width: 100%;
+            height: 4.5rem;
+            @while $total >= $i {
+                &:nth-child(#{$i + 1}) {
+                    background: rgba(#000, $i * 0.1);
+                }
+                $i: $i + 1;
+            }
+            
+        }
+    }
+    
+    .scene {
+        position: absolute;
+        height: $circleSize;
+        border-radius: 50%;
+        overflow: hidden;
+        width: 100%;
+        top: 0;
+        z-index: 1;
+        .sun {
+            box-shadow: 0 1px 3px rgba(#fff, 0.12), 0 1px 2px rgba(0,0,0,0.24);
+	        animation: move 10s infinite linear;
+            position: absolute;
+            top: 1rem;
+            left: -$objSize;
+            background: $sunColor;
+            border-radius: 50%;
+            height: $objSize;
+            width: $objSize;
+        }
+        .moon {
+            box-shadow: 0 1px 3px rgba(#fff, 0.12), 0 1px 2px rgba(0,0,0,0.24);
+	        animation: move 10s 5s infinite linear;
+            position: absolute;
+            top: 1rem;
+            left: -$objSize;
+            background: $moonColor;
+            border-radius: 50%;
+            height: $objSize;
+            width: $objSize;
+        }
+    }
+}
+
+.street {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+}
+.buildings {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+.ground {
+    background: rgb(159, 182, 197);
+    height: 3rem;
+    width: 100%;
+}
+
+@keyframes move {
+	0% { transform: translateX(50%); }
+	100% { transform: translateX(1000%); }
+}
+
+@keyframes colors {
+    0% { background: $bgColor; }
+	25% { background: lighten($bgColor, 25); }
+    50% { background: $bgColor; }
+    75% { background: lighten($bgColor, 5); }
+    100% { background: $bgColor; }
+}
+
+@keyframes houseRoof {
+    0% { border-bottom: $houseTopSize - 0.2 solid lighten($houseColor, 10); }
+    25% { border-bottom: $houseTopSize - 0.2 solid lighten($houseColor, 18); }
+    50% { border-bottom: $houseTopSize - 0.2 solid lighten($houseColor, 10); }
+    75% {border-bottom: $houseTopSize - 0.2 solid lighten($houseColor, 13); }
+    100% { border-bottom: $houseTopSize - 0.2 solid lighten($houseColor, 10); }
+}
+
+@keyframes garageRoof {
+    0% { border-bottom: $houseTopSize - 0.8 solid lighten($houseColor, 10); }
+    25% { border-bottom: $houseTopSize - 0.8 solid lighten($houseColor, 18); }
+    50% { border-bottom: $houseTopSize - 0.8 solid lighten($houseColor, 10); }
+    75% {border-bottom: $houseTopSize - 0.8 solid lighten($houseColor, 13); }
+    100% { border-bottom: $houseTopSize - 0.8 solid lighten($houseColor, 10); }
+}
+
+@keyframes garageColor {
+    0% { background:  lighten($houseColor, 10); }
+	25% { background: lighten($houseColor, 18); }
+    50% { background: lighten($houseColor, 10); }
+    75% { background: lighten($houseColor, 13); }
+    100% { background: lighten($houseColor, 10); }
+}
+
+@keyframes houseWindow {
+    0% { background: #fff; }
+	25% { background: #fff; }
+    50% { background: $windowColor; }
+    75% { background: $windowColor; }
+    100% { background: $windowColor; }
+}
+
+
+
+
+

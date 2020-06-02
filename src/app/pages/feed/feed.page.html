@@ -1,26 +1,171 @@
-<ion-header  no-header>
+<!-- <ion-header no-header>
   <ion-toolbar>
-   <ion-segment mod="md" [(ngModel)]="segment" (ionChange)="segmentChanged($event)">
-     <ion-segment-button value="0">
-       <ion-icon name="phone-portrait"></ion-icon>
-       Mobile
-     </ion-segment-button>
-     <ion-segment-button  value="1">
-      <ion-icon name="watch"></ion-icon>
-      Watches
-    </ion-segment-button>
-    <ion-segment-button  value="2">
-      <ion-icon name="headset"></ion-icon>
-      Headset
-    </ion-segment-button>
-   </ion-segment>
+    <ion-segment mod="md" [(ngModel)]="segment" (ionChange)="segmentChanged($event)">
+      <ion-segment-button value="0">
+        <ion-icon name="menu"cmd="md-menu"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="1">
+        Services
+      </ion-segment-button>
+      <ion-segment-button value="2">
+        Kishore.G
+      </ion-segment-button>
+    </ion-segment>
   </ion-toolbar>
+
+  <ion-searchbar search lines='none'
+    showcancelbutton="" placeholder="Search for Categories"
+    (ioninput)="filterList($event)" color="light"
+  ></ion-searchbar>
 </ion-header>
 
 <ion-content>
-  <ion-slides #slides pager="false" [options]="sliderOptions" (ionSlidesChange)="slideShanged(slides)" (ionSlidesDidLoad)="slideShanged(slides)">
-    <ion-slide>1</ion-slide>
-    <ion-slide>2</ion-slide>
-    <ion-slide>3</ion-slide>
+  <ion-slides #slides pager="false" [options]="sliderOptions" (ionSlideDidChange)="slideShanged(slides)"
+    (ionSlideDidLoad)="slideShanged(slides)">
+    <ion-slide>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <h3>Architecture</h3>
+          </ion-col>
+        </ion-row>
+        <ion-row categories> 
+          <ion-col>
+            <img src="assets/images/items/4.jpg" />
+          </ion-col>
+          <ion-col>
+            <img src="assets/images/items/5.jpg" />
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <h3>Construction</h3>
+          </ion-col>
+        </ion-row>
+        <ion-row categories> 
+          <ion-col>
+            <img src="assets/images/items/4.jpg" />
+          </ion-col>
+          <ion-col>
+            <img src="assets/images/items/5.jpg" />
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <h3>Interior Design</h3>
+          </ion-col>
+        </ion-row>
+        <ion-row categories> 
+          <ion-col>
+            <img src="assets/images/items/4.jpg" />
+          </ion-col>
+          <ion-col>
+            <img src="assets/images/items/5.jpg" />
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      
+    </ion-slide>
+    <ion-slide>
+      <ion-grid>
+        <ion-row>
+          <ion-col><img src="assets/images/items/3.jpg"></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <h1>Mobiles</h1>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <img src="assets/images/items/4.jpg" />
+            <label>iPhone 11 With FaceTime</label>
+            <label>Galaxy Note10 Plus Dual SIM Aure Black 256GB 12GB RAM 4G LTE</label>
+            <label price>SAR 2350.00</label>
+          </ion-col>
+          <ion-col>
+            <img src="assets/images/items/2.jpg" />
+            <label>iPhone 11 With FaceTime</label>
+            <label>Galaxy Note10 Plus Dual SIM Aure Black 256GB 12GB RAM 4G LTE</label>
+            <label price>SAR 2350.00</label>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+    <ion-slide>
+      <ion-grid>
+        <ion-row>
+          <ion-col><img src="assets/images/items/3.jpg"></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <h1>Mobiles</h1>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <img src="assets/images/items/4.jpg" />
+            <label>iPhone 11 With FaceTime</label>
+            <label>Galaxy Note10 Plus Dual SIM Aure Black 256GB 12GB RAM 4G LTE</label>
+            <label price>SAR 2350.00</label>
+          </ion-col>
+          <ion-col>
+            <img src="assets/images/items/4.jpg" />
+            <label>iPhone 11 With FaceTime</label>
+            <label>Galaxy Note10 Plus Dual SIM Aure Black 256GB 12GB RAM 4G LTE</label>
+            <label price>SAR 2350.00</label>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
   </ion-slides>
+</ion-content> -->
+<ion-header no-header>
+  <ion-list class="searchMain">
+    <ion-item lines='none'>
+      <div class="cntr">
+        <div class="cntr-innr">
+          <label class="search" for="inpt_search">
+            <input id="inpt_search" type="text" />
+          </label>
+        </div>
+      </div>
+    </ion-item>
+  </ion-list>
+  <ion-list class="userName">
+    <ion-item lines='none' class="user-color">Kishore</ion-item>
+  </ion-list>
+  <ion-list class="services">
+    <ion-item lines='none' class="services-color">Services</ion-item>
+  </ion-list>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item lines='none'>
+      <ion-title class="architecture">Architecture</ion-title>
+      <ion-title class="view-all">View all</ion-title>
+    </ion-item>
+    <ion-item class="architecture-body">
+      <img src="assets/images/items/4.jpg">
+      <img src="assets/images/items/4.jpg">
+    </ion-item>
+    <ion-item lines='none'>
+      <ion-title class="construction">Construction</ion-title>
+      <ion-title class="view-all">View all</ion-title>
+    </ion-item>
+    <ion-item class="architecture-body">
+      <img src="assets/images/items/4.jpg">
+      <img src="assets/images/items/4.jpg">
+    </ion-item>
+    <ion-item lines='none'>
+      <ion-title class="interior-design">Interior Design</ion-title>
+      <ion-title class="view-all">View all</ion-title>
+    </ion-item>
+    <ion-item class="architecture-body">
+      <img src="assets/images/items/4.jpg">
+      <img src="assets/images/items/4.jpg">
+    </ion-item>
+  </ion-list>
 </ion-content>

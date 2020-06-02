@@ -11,6 +11,10 @@ const routes: Routes = [
     path: 'home',
     loadChildren:'./home/home.module#HomePageModule'
   }
+  // {
+  //   path: 'company-logo',
+  //   loadChildren: () => import('./pages/company-logo/company-logo.module').then( m => m.CompanyLogoPageModule)
+  // }
 ];
 @NgModule({
   imports: [

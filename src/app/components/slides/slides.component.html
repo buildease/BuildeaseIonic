@@ -1,21 +1,46 @@
-<ion-slides pager="true" [options]="slideOpts">
-  <ion-slide>
-    <app-logo></app-logo> 
+<!-- <ion-label class="ion-text-wrap" >
+  <h2 class="success">Get Started!</h2>
+</ion-label> -->
+<ion-slides pager="true" [options]="slideOpts" class="slide-menu">
+  <ion-slide *ngIf="architecture">
     <div id="shadowBox">
-      <h3  class="rainbow rainbow_text_animated">Architecture</h3>
+      <h3 class="rainbow rainbow_text_animated">Architecture</h3>
+    </div>
+    <img src="assets/splashImg/architecture.jpg">
+    <div class="desc">
+      <p>Architecture is an art and science of designing building and other physical from </p>
     </div>
   </ion-slide>
-  <ion-slide>
-    <app-logo></app-logo>
+  <ion-slide *ngIf="construction">
     <div id="shadowBox">
-      <h3  class="rainbow rainbow_text_animated">Construction</h3>
+      <h3 class="rainbow rainbow_text_animated">Construction</h3>
+    </div>
+    <img src="assets/splashImg/construction.jpg">
+    <div class="desc">
+      <p>Letting your plan of dream building becomes true at the best possible qualit</p>
     </div>
   </ion-slide>
-  <ion-slide>
-    <app-logo></app-logo>
+  <ion-slide  *ngIf="interiordesign">
     <div id="shadowBox">
-      <h3  class="rainbow rainbow_text_animated">Interior design</h3>
+      <h3 class="rainbow rainbow_text_animated">Interior design</h3>
     </div>
+    <img src="assets/splashImg/interiordesign.jpg">
+    <div class="desc">
+      <p>The Essence of design tells a story of what you are and your collections of design show what you love
+      </p>
+    </div>
+  </ion-slide>
+  <ion-slide *ngIf="consultation">
+    <div id="shadowBox">
+      <h3 class="rainbow rainbow_text_animated">Consultation</h3>
+    </div>
+    <img src="assets/splashImg/consultation.jpg">
+    <div class="desc">
+      <p>Let's connect to explore and enhance the best design and build it the way you desire</p>
+    </div>
+    <ion-row class="explore">
+      <ion-button (click)="navigateToCompanyLogoPage()" class="explore-background">Explore</ion-button>
+    </ion-row>
   </ion-slide>
 </ion-slides>
-
+<app-start class="skip" *ngIf="consultation == false"></app-start>

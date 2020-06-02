@@ -31,6 +31,10 @@ const routes: Routes = [
       {
         path:'sendotpemail',
         loadChildren:'../pages/sendotpemail/sendotpemail.module#SendotpemailPageModule'
+      },
+      {
+        path:'company-logo',
+        loadChildren:'../pages/company-logo/company-logo.module#CompanyLogoPageModule'
       }
     ]
   }

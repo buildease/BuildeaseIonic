@@ -1,3 +1,5 @@
  ng generate page pages/settings
  ionic serve
  https://ionicons.com/
+
+ npm install @angular/animations@
