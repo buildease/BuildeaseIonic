@@ -21,6 +21,10 @@ const routes: Routes = [
         loadChildren:'../pages/signup/signup.module#SignupPageModule'
       },
       {
+        path:'signup-otp',
+        loadChildren:'../pages/signup-otp/signup-otp.module#SignupOtpPageModule'
+      },
+      {
         path:'forgotpassword',
         loadChildren:'../pages/forgotpassword/forgotpassword.module#ForgotpasswordPageModule'
       },

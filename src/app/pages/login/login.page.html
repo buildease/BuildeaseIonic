@@ -3,28 +3,28 @@
     <img src="assets/images/loginlogo.png" alt="login logo" width="170">
     <ion-title class="login-text">Sign In</ion-title>
   </div>
-<form [@fadeUp]>
+<form #contactForm="ngForm" (ngSubmit)="submitdata(contactForm.value)" [@fadeUp]>
   <ion-list>
     <ion-item>
-      <ion-label class="label-item" position="stacked">Username</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-label class="label-item" position="stacked">Email</ion-label>
+      <ion-input type="text" name="email" [(ngModel)] = "email"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label class="label-item" position="stacked">Password</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-input type="password" name="password" [(ngModel)] = "password"></ion-input>
     </ion-item>
 
     <ion-item lines='none' class="forgotpass">
       <a routerLink="/sendotpemail">Forgot Password</a>
     </ion-item>
   </ion-list>
-  <ion-button lines='none' expand="block" color="tertiary-shade" class="ion-text-capitalize sign-in-btn" (click)="login()">Sign In</ion-button>
+  <ion-button lines='none' type="submit" expand="block" color="tertiary-shade" class="ion-text-capitalize sign-in-btn">Sign In</ion-button>
 </form>
 <ion-list>
   <div class="center register-with-social-media">
     <a><img src="assets/images/facebook.png" alt="fb" width="40" height="35"></a>
-    <a><img src="assets/images/email.png" alt="email" width="40" height="45"></a>
+    <a><img src="assets/images/email.png" alt="email" width="40" height="35"></a>
   </div>
 </ion-list>
 

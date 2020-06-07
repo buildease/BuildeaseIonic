@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { GetListService } from '../../services/get-list.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Location } from "@angular/common";
 import { from } from 'rxjs';
 import { trigger, state, transition, keyframes, animate, style } from '@angular/animations';
 
@@ -30,14 +33,38 @@ import { trigger, state, transition, keyframes, animate, style } from '@angular/
   ]
 })
 export class LoginPage implements OnInit {
+  authForm: FormGroup;
+  email:any;
+  password:any;
+  constructor(private location: Location, private router: Router,
+    private getListService: GetListService, private form: FormBuilder) {
 
-  constructor(private router: Router) { }
+  }
 
   ngOnInit() {
   }
-  login() {
-    this.router.navigate(['/home']);
+
+  submitdata(formValue: any) {
+    console.log(formValue);
+    var logindata = {
+      email: formValue.email,
+      password: formValue.password
+    }
+
+    this.getListService.Login(logindata).subscribe(
+      rdata => {
+        console.log(rdata.Success, "rdata.Success")
+        if(rdata.Success === true){
+          console.log(rdata, "rdata")
+          this.router.navigate(['/home']);
+        }
+      },
+      error => {
+        console.log("error is" + error)
+      }
+    )
   }
+  
   signUp() {
     this.router.navigate(['/signup']);
   }

@@ -10,6 +10,10 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren:'./home/home.module#HomePageModule'
+  },
+  {
+    path: 'signup-otp',
+    loadChildren: () => import('./pages/signup-otp/signup-otp.module').then( m => m.SignupOtpPageModule)
   }
   // {
   //   path: 'company-logo',

@@ -5,11 +5,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Location } from "@angular/common";
 
 @Component({
-  selector: 'app-forgotpassword',
-  templateUrl: './forgotpassword.page.html',
-  styleUrls: ['./forgotpassword.page.scss'],
+  selector: 'app-signup-otp',
+  templateUrl: './signup-otp.page.html',
+  styleUrls: ['./signup-otp.page.scss'],
 })
-export class ForgotpasswordPage implements OnInit {
+export class SignupOtpPage implements OnInit {
   authForm: FormGroup;
   one: any;
   two: any;
@@ -20,26 +20,9 @@ export class ForgotpasswordPage implements OnInit {
 
   ngOnInit() {
   }
+
   myBackButton() {
     this.location.back();
-  }
-
-  submitdata(formValue: any) {
-    console.log(formValue)
-    const otp = formValue.one + "" + formValue.two + "" + formValue.three + "" + formValue.four;
-    console.log(otp)
-    var registerOtp = {
-      resetOtp: otp
-    }
-
-    this.getListService.otpPassword(registerOtp).subscribe(
-      rdata => {
-        this.router.navigate(['/resetpassword']);
-      },
-      error => {
-        console.log("error is" + error)
-      }
-    )
   }
 
   otpController(event, next, prev) {
@@ -52,5 +35,24 @@ export class ForgotpasswordPage implements OnInit {
     else {
       return 0;
     }
+  }
+
+  submitdata(formValue: any) {
+    const otp = formValue.one +""+ formValue.two +""+ formValue.three +""+ formValue.four;
+    console.log(otp)
+    var registerOtp = {
+      resetOtp: otp
+    }
+
+    this.getListService.RegisterOtp(registerOtp).subscribe(
+      rdata => {
+        console.log(rdata, "rdata")
+        this.router.navigate(['/home']);
+      },
+      error => {
+        console.log("error is" + error)
+      }
+    )
+
   }
 }

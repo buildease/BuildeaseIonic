@@ -18,22 +18,28 @@
     </ion-title>
   </div>
 
-  <form #contactForm="ngForm" (ngSubmit)="submitdata(contactForm.value)">
+  <form  #contactForm="ngForm" (ngSubmit)="submitdata(contactForm.value)">
     <ion-list>
       <ion-row class="center">
         <ion-col>
-          <ion-input type="Number"  name="one" [(ngModel)] = "one" maxlength="1" #otp1 required maxLength="1" (keyup)="otpController($event,otp2,'')">
+          <ion-input type="Number" maxlength="1" #otp1 required maxLength="1" 
+          name="one" [(ngModel)] = "one" (keyup)="otpController($event,otp2,'')">
           </ion-input>
-          <ion-input type="Number" name="two" [(ngModel)] = "two" #otp2 required maxLength="1" (keyup)="otpController($event,otp3,otp1)">
+          <ion-input type="Number" #otp2 required maxLength="1" 
+          name="two" [(ngModel)] = "two"
+          (keyup)="otpController($event,otp3,otp1)">
           </ion-input>
-          <ion-input type="Number" name="three" [(ngModel)] = "three" #otp3 required maxLength="1" (keyup)="otpController($event,otp4,otp2)">
+          <ion-input type="Number" #otp3 required maxLength="1" 
+          name="three" [(ngModel)] = "three" (keyup)="otpController($event,otp4,otp2)">
           </ion-input>
-          <ion-input type="Number" name="four" [(ngModel)] = "four" #otp4 required maxLength="1" (keyup)="otpController($event,'',otp3)">
+          <ion-input type="Number" #otp4 required maxLength="1" 
+          name="four" [(ngModel)] = "four" (keyup)="otpController($event,'',otp3)">
           </ion-input>
         </ion-col>
       </ion-row>
     </ion-list>
-    <ion-button lines='none' expand="block" color="tertiary-shade" class="ion-text-capitalize sign-in-btn"
-      type="submit">Done</ion-button>
+    <ion-button lines='none' expand="block" color="tertiary-shade" 
+    class="ion-text-capitalize sign-in-btn" type="submit">Done</ion-button>
   </form>
+
 </ion-content>

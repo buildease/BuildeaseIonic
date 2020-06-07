@@ -8,9 +8,6 @@
     </ion-buttons>
   </ion-toolbar>
 
-  <!-- <div class="login-logo">
-    <ion-title class="login-text">Forgot Password</ion-title>
-  </div> -->
   <div class="center logo-email">
     <img src="assets/images/email3.PNG" alt="login logo" width="120">
   </div>
@@ -18,17 +15,15 @@
     <ion-title class="title-password">Enter your email address and we'll send you a link to reset your password
     </ion-title>
   </div>
-  <form>
-   
+  <form #contactForm="ngForm" (ngSubmit)="submitdata(contactForm.value)">
     <ion-list>
-    
       <ion-item>
         <ion-label class="label-item" position="stacked">Email</ion-label>
-        <ion-input type="email"></ion-input>
+        <ion-input type="email" name="email" [(ngModel)] = "email"></ion-input>
       </ion-item>
 
     </ion-list>
     <ion-button lines='none' expand="block" color="tertiary-shade" class="ion-text-capitalize sign-in-btn"
-      (click)="login()">Done</ion-button>
+      type="submit">Done</ion-button>
   </form>
 </ion-content>
