@@ -1,0 +1,52 @@
+<ion-header no-header (click)="myBackButton()">
+  <div class="top-left" >
+    <ion-icon slot="start" class="arrow-icon" name="arrow-back"></ion-icon>
+  </div>
+  <ion-title lines='none' class="centered">Construction</ion-title>
+</ion-header>
+<ion-content>
+  <ion-toolbar>
+    <ion-segment mod="md" [(ngModel)]="segment" (ionChange)="segmentChanged($event)">
+      <ion-segment-button value="0">
+        Living room
+      </ion-segment-button>
+      <ion-segment-button value="1">
+        Bed room
+      </ion-segment-button>
+      <ion-segment-button value="2">
+        Kitchen
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+  <ion-slides #slides pager="false" [options]="sliderOptions" (ionSlideDidChange)="slideShanged(slides)"
+    (ionSlideDidLoad)="slideShanged(slides)">
+    <ion-slide>
+      <ion-grid>
+        <ion-row categories>
+          <ion-item class="architecture-body" lines='none' *ngFor="let image of images">
+            <ion-img-viewer title="Living room" text="Construction" scheme="light" src={{image}}></ion-img-viewer>
+          </ion-item>
+        </ion-row>
+      </ion-grid>
+
+    </ion-slide>
+    <ion-slide>
+      <ion-grid>
+        <ion-row categories>
+          <ion-item class="architecture-body" lines='none' *ngFor="let image of images">
+            <ion-img-viewer title="Bed room" text="Construction" scheme="light" src={{image}}></ion-img-viewer>
+          </ion-item>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+    <ion-slide>
+      <ion-grid>
+        <ion-row categories>
+          <ion-item class="architecture-body" lines='none' *ngFor="let image of images">
+            <ion-img-viewer title=" Kitchen" text="Construction" scheme="light" src={{image}}></ion-img-viewer>
+          </ion-item>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

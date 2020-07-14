@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { GetListService } from '../../services/get-list.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Location } from "@angular/common";
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-resetpassword',
@@ -13,7 +14,7 @@ export class ResetpasswordPage implements OnInit {
   authForm: FormGroup;
   password:any;
   constructor(private location: Location, private router: Router, private getListService: GetListService,
-    private form: FormBuilder) {
+    private form: FormBuilder,public toastController: ToastController) {
 
   }
 
@@ -31,12 +32,33 @@ export class ResetpasswordPage implements OnInit {
 
     this.getListService.resetPassword(newpassword).subscribe(
       rdata => {
-        // console.log(rdata, "rdata")
+        this.successToast();
         this.router.navigate(['/login']);
       },
       error => {
+        this.errorToast();
         console.log("error is" + error)
       }
     )
+  }
+
+  async errorToast() {
+    const toast = await this.toastController.create({
+      message: 'Something went wrong!!.',
+      duration: 2000,
+      color:'warning',
+      position:'middle'
+    });
+    toast.present();
+  }
+
+  async successToast() {
+    const toast = await this.toastController.create({
+      message: 'Password reset successful!.',
+      duration: 2000,
+      color:'success',
+      position:'middle'
+    });
+    toast.present();
   }
 }

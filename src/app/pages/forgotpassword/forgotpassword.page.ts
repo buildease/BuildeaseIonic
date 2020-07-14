@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { GetListService } from '../../services/get-list.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Location } from "@angular/common";
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-forgotpassword',
@@ -16,7 +17,7 @@ export class ForgotpasswordPage implements OnInit {
   three: any;
   four: any;
   constructor(private location: Location, private router: Router, private getListService: GetListService,
-    private form: FormBuilder) { }
+    private form: FormBuilder,public toastController: ToastController) { }
 
   ngOnInit() {
   }
@@ -34,9 +35,11 @@ export class ForgotpasswordPage implements OnInit {
 
     this.getListService.otpPassword(registerOtp).subscribe(
       rdata => {
+        this.successToast();
         this.router.navigate(['/resetpassword']);
       },
       error => {
+        this.errorToast();
         console.log("error is" + error)
       }
     )
@@ -52,5 +55,25 @@ export class ForgotpasswordPage implements OnInit {
     else {
       return 0;
     }
+  }
+
+  async errorToast() {
+    const toast = await this.toastController.create({
+      message: 'Something went wrong!!.',
+      duration: 2000,
+      color:'warning',
+      position:'middle'
+    });
+    toast.present();
+  }
+
+  async successToast() {
+    const toast = await this.toastController.create({
+      message: 'Reset your password!!.',
+      duration: 2000,
+      color:'success',
+      position:'middle'
+    });
+    toast.present();
   }
 }

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { IonSlide, IonSlides } from '@ionic/angular';
 import { setIndex } from '@ionic-native/core/decorators/common';
+import { Router, ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Location } from "@angular/common";
 
 @Component({
   selector: 'app-feed',
@@ -8,24 +11,38 @@ import { setIndex } from '@ionic-native/core/decorators/common';
   styleUrls: ['./feed.page.scss'],
 })
 export class FeedPage implements OnInit {
-  // selectedSlide:any;
-  // segment = 0;
-  // sliderOptions = {
-  //   initialSlide: 0,
-  //   slidesPerView: 1,
-  //   speed: 400
-  // }
-  constructor() { }
+  userdetails: any;
+  architectureImg:string[]=[];
+  constructionImg:string[]=[];
+  interiordesignImg:string[]=[];
+  constructor(private location: Location, private router: Router,
+    private form: FormBuilder) { 
+      this.architectureImg = [
+        'assets/images/items/3.jpg',
+        'assets/images/items/architec.jpg'
+      ];
+
+      this.constructionImg = [
+        'assets/images/items/con1.jpg',
+        'assets/images/items/con2.jpg'
+      ]
+
+      this.interiordesignImg = [
+        'assets/images/items/5.jpg',
+        'assets/images/items/interior.jpg'
+      ]
+    }
 
   ngOnInit() {
+    this.userdetails = JSON.parse(localStorage.getItem('userData')).User;
   }
-  // async segmentChanged(ev) {
-  //     await this.selectedSlide.slideTo(this.segment);
-  // }
-  // async slideShanged(slides:IonSlides) {
-  //    this.selectedSlide = slides;
-  //    slides.getActiveIndex().then(selectedIndex =>{
-  //      this.segment = selectedIndex;
-  //    })
-  // }
+  architectureList(){
+    this.router.navigate(['/architecturelist']);
+  }
+  constructionList(){
+    this.router.navigate(['/constructionlist']);
+  }
+  interiordesignList(){
+    this.router.navigate(['/interiordesignlist']);
+  }
 }

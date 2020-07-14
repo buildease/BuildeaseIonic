@@ -1,18 +1,59 @@
 
+ 
 
-<ion-content class="masters">
-  <!-- <ion-toolbar class="tool-bar">
-    <ion-buttons slot="start" (click)="myBackButton()">
+  <ion-content class="masters">
+    <div (click)="myBackButton()">
       <ion-icon slot="start" class="arrow-icon" name="arrow-back"></ion-icon>
-    </ion-buttons>
-  </ion-toolbar> -->
-  <!-- <ion-list inset>
-    <button ion-item *ngFor="#master of masterPages" (click)="navMaster(master)">
-      master
-    </button>
-  </ion-list> -->
-  <ion-title class="services">Services</ion-title>
- <div>
-   fsf
- </div>
-</ion-content>
+    </div>
+    <ion-title class="services">Services</ion-title>
+    <ion-card (click)="constructionForm()">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <div class="ion-text-wrap">
+              <img src="assets/images/items/construction.jpg" alt="login logo" width="120" height="110">
+            </div>
+          </ion-col>
+          <ion-col>
+            <div class="ion-text-justify">
+              <h3> Construction</h3>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+    <ion-card (click)="architectureForm()">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <div class="ion-text-wrap">
+              <img src="assets/images/items/architecture.jpg" alt="login logo" width="120" height="110">
+            </div>
+          </ion-col>
+          <ion-col>
+            <div class="ion-text-justify">
+              <h3> Architecture</h3>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+  
+    <ion-card (click)="interiorDesign()">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <div class="ion-text-wrap">
+              <img src="assets/images/items/interior.jpg" alt="login logo" width="120" height="110">
+            </div>
+          </ion-col>
+          <ion-col>
+            <div class="ion-text-justify">
+              <h3> Interior Design</h3>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+  
+  </ion-content>

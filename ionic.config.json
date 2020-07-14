@@ -1,5 +1,7 @@
 {
   "name": "buildease-ui-2",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

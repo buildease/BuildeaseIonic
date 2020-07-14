@@ -1,39 +1,4 @@
-// ion-segment-button{
-//     font-size:12px;
-//    }
-   
-//    h3{
-//      margin-top:20px;
-//    font-size:20px;
-//    margin:0 !important;
-//    padding:0 !important;
-//    text-align:left;
-//    font-weight:600;
-//    }
-   
-//    label{
-//     text-align:left;
-//    display:block;
-//    font-size:13px;
-//    }
-//    [price]{
-//    font-weight:bold;
-//    }
-//    .swiper-slide img{
-//       width:auto;
-//    max-width:100%;
-//    height:auto;
-//    max-height:100%;
-//    border-radius:10px;
-//    }
-//    [search]{
-//        margin-top: 10px;
-//        margin-bottom: 10px;
-//        border-radius: 16px !important;
-//    }
-//    [categories] img{
-//       height: 130px;
-//    }
+
 
 
 
@@ -47,6 +12,9 @@ ion-header ion-list:nth-child(1) {
 
 .userName{
    float: right;
+}
+.userName ion-item{
+   text-transform: capitalize !important;
 }
 .services{
    // margin-left: 30px;
@@ -123,6 +91,7 @@ ion-content{
          text-align: -webkit-right !important;
          color: #9bb5c7;
          padding: 0;
+         font-size: inherit;
       }
       .architecture, .construction, .interior-design{
          padding: 0;
@@ -131,16 +100,16 @@ ion-content{
       .architecture-body {
       margin-bottom: 20px;
       }
-      .architecture-body img:nth-child(1){
+      ion-img-viewer:nth-child(1){
          width: 47%;
-         height: 150px;
+         height: 120px !important;
          display: inline;
          margin: 0px 20px 0px 0px;
          padding-bottom: 20px;
       }
-      .architecture-body img:nth-child(2){
+      ion-img-viewer:nth-child(2){
          width: 47%;
-         height: 150px;
+         height: 120px !important;
          display: inline;
          margin: 0px !important;
          padding-bottom: 20px;

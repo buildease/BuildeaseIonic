@@ -5,7 +5,7 @@
   <form #contactForm="ngForm" (ngSubmit)="submitdata(contactForm.value)" >
     <ion-list>
       <ion-item>
-        <ion-label class="label-item" position="stacked">Username</ion-label>
+        <ion-label class="label-item" position="stacked">Name</ion-label>
         <ion-input type="text" name="name" [(ngModel)] = "name"></ion-input>
       </ion-item>
 
@@ -15,7 +15,7 @@
       </ion-item>
 
       <ion-item>
-        <ion-label class="label-item" position="stacked">Phone Number</ion-label>
+        <ion-label class="label-item" position="stacked">Mobile Number (Optional)</ion-label>
         <ion-input type="Number" name="contact" [(ngModel)] = "contact" ></ion-input>
       </ion-item>
 
@@ -26,14 +26,16 @@
 
       <ion-item>
         <ion-label class="label-item" position="stacked">Confirm-Password</ion-label>
-        <ion-input type="Password" name="password2" [(ngModel)] = "password2" ></ion-input>
+        <ion-input type="Password" name="confirmPassword" [(ngModel)] = "confirmPassword" ></ion-input>
       </ion-item>
 
-
-      <ion-item lines='none' class="agree">
-        <ion-radio value="enemies"></ion-radio>
-        <a>&nbsp; Agree with Terms and Conditions</a>
-      </ion-item>
+      <ion-radio-group>
+        <ion-item lines='none' class="agree">
+            <ion-radio value="enemies"></ion-radio>
+            <a>&nbsp; Agree with Terms and Conditions</a>
+        </ion-item>
+      </ion-radio-group>
+      
     </ion-list>
     <ion-button lines='none' expand="block" color="tertiary-shade" class="ion-text-capitalize sign-in-btn"
     type="submit" >Sign Up</ion-button>

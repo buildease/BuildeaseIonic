@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { GetListService } from '../../services/get-list.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Location } from "@angular/common";
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-signup-otp',
@@ -16,7 +17,7 @@ export class SignupOtpPage implements OnInit {
   three: any;
   four: any;
   constructor(private location: Location, private router: Router, private getListService: GetListService,
-    private form: FormBuilder) { }
+    private form: FormBuilder,public toastController: ToastController) { }
 
   ngOnInit() {
   }
@@ -47,12 +48,34 @@ export class SignupOtpPage implements OnInit {
     this.getListService.RegisterOtp(registerOtp).subscribe(
       rdata => {
         console.log(rdata, "rdata")
+        this.successToast();
         this.router.navigate(['/home']);
       },
       error => {
+        this.errorToast();
         console.log("error is" + error)
       }
     )
 
+  }
+
+  async errorToast() {
+    const toast = await this.toastController.create({
+      message: 'Something went wrong!!.',
+      duration: 2000,
+      color:'warning',
+      position:'middle'
+    });
+    toast.present();
+  }
+
+  async successToast() {
+    const toast = await this.toastController.create({
+      message: 'You have been registered successfully!!.',
+      duration: 2000,
+      color:'success',
+      position:'middle'
+    });
+    toast.present();
   }
 }

@@ -1,0 +1,71 @@
+<ion-content>
+  <ion-card>
+    <img src="assets/images/items/construction1.jpg" alt="ion">
+    <div class="top-left" (click)="myBackButton()">
+      <ion-icon slot="start" class="arrow-icon" name="arrow-back"></ion-icon>
+    </div>
+    <ion-title lines='none' class="centered">Interior Design</ion-title>
+  </ion-card>
+
+  <form #contactForm="ngForm" (ngSubmit)="submitdata(contactForm.value)">
+
+    <ion-list>
+      <ion-item lines='none'>
+        <ion-label class="label-item" position="stacked">
+          <h1>Please fill the form</h1>
+        </ion-label>
+      </ion-item>
+
+      <ion-item lines='none'>
+        <ion-label class="label-item" position="stacked">Name</ion-label>
+        <ion-input type="text" name="name" [(ngModel)]="name"></ion-input>
+      </ion-item>
+
+      <ion-item lines='none'>
+        <ion-label class="label-item" position="stacked">Email Id</ion-label>
+        <ion-input type="email" name="email" [(ngModel)]="email"></ion-input>
+      </ion-item>
+
+      <ion-item lines='none'>
+        <ion-label class="label-item" position="stacked">Contact Number</ion-label>
+        <ion-input type="Number" name="number" [(ngModel)]="number"></ion-input>
+      </ion-item>
+
+      <ion-item lines='none' (ionChange)="categoryChanged($event)">
+        <ion-label class="label-item" position="stacked">Planning for</ion-label>
+        <ion-radio-group>
+          <ion-row>
+            <ion-col *ngFor="let planning of plannings">
+              <ion-radio mode="md" item-left value="{{planning}}"></ion-radio>{{planning}}
+            </ion-col>
+          </ion-row>
+        </ion-radio-group>
+      </ion-item>
+
+      <ion-item lines='none' class="requrements">
+        <ion-row>
+          <ion-col>
+            <ion-label class="label-item" position="stacked">Area</ion-label>
+            <ion-input type="Number" name="area" [(ngModel)]="area"></ion-input>
+          </ion-col>
+          <ion-col>
+            <ion-label class="label-item" position="stacked">Length</ion-label>
+            <ion-input type="Number" name="length" [(ngModel)]="length"></ion-input>
+          </ion-col>
+          <ion-col>
+            <ion-label class="label-item" position="stacked">Breadth</ion-label>
+            <ion-input type="Number" name="breadth" [(ngModel)]="breadth"></ion-input>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+
+      <ion-item lines='none'>
+        <ion-label class="label-item" position="stacked">Any Additional requirements</ion-label>
+        <ion-textarea name="additional" [(ngModel)]="additional"></ion-textarea>
+      </ion-item>
+    </ion-list>
+
+    <ion-button lines='none' type="submit" expand="block" color="tertiary-shade"
+      class="ion-text-capitalize sign-in-btn centered">Submit</ion-button>
+  </form>
+</ion-content>

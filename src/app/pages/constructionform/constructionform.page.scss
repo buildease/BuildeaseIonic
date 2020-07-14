@@ -1,0 +1,74 @@
+ion-card{
+    margin: 0px;
+    height: 150px;
+}
+
+.top-left {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+}
+ion-icon .arrow-icon{
+      color:#fff;
+}
+.top-left ion-icon{
+      color: #fff;
+      font-size: x-large;
+}
+.centered {
+    position: absolute;
+    top: 94%;
+    padding: 5px;
+    z-index: 1;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+  }
+
+.label-item{
+    font-size: 1.3em !important;
+    color: #3c6f91;
+}
+form{
+    padding: 0px 30px 30px 30px;
+}
+.sign-in-btn{
+    background: linear-gradient(#306589, #725b98);
+    font-size: 20px;
+    height: 40px;
+    display: inline-block;
+    margin-top: 13px;
+    padding: 0;
+}
+
+ion-input{
+    height: 28px;
+}
+ion-radio-group{
+    color: #745984;
+}
+ion-input, ion-textarea{
+    border: 1px solid;
+    padding-left: 10px !important;
+    margin-top: 8px;
+    width: 80%;
+    border-color: #745984;
+    border-radius: 5px;
+    color: #745984;
+}
+.requrements ion-col{
+    padding: 0;
+}
+ion-label h1{
+color: #745984;
+}
+.ion-activatable .ion-activatable-instant{
+    border-bottom: 0 !important;
+    background-color: #745984;
+}
+
+ion-item{
+    line-height:1;
+    font-size: 15px;
+}
+

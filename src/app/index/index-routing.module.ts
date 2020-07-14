@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
+import { AuthGuardService } from '../services/auth/auth-guard.service';
 import { IndexPage } from './index.page';
 
 const routes: Routes = [
@@ -39,6 +39,30 @@ const routes: Routes = [
       {
         path:'company-logo',
         loadChildren:'../pages/company-logo/company-logo.module#CompanyLogoPageModule'
+      },
+      {
+        path:'architectureform',
+        loadChildren:'../pages/architectureform/architectureform.module#ArchitectureformPageModule'
+      },
+      {
+        path:'constructionform',
+        loadChildren:'../pages/constructionform/constructionform.module#ConstructionformPageModule'
+      },
+      {
+        path:'interiorform',
+        loadChildren:'../pages/interiorform/interiorform.module#InteriorformPageModule'
+      },
+      {
+        path:'architecturelist',
+        loadChildren:'../pages/architecturelist/architecturelist.module#ArchitecturelistPageModule'
+      },
+      {
+        path:'constructionlist',
+        loadChildren:'../pages/constructionlist/constructionlist.module#ConstructionlistPageModule'
+      },
+      {
+        path:'interiordesignlist',
+        loadChildren:'../pages/interiordesignlist/interiordesignlist.module#InteriordesignlistPageModule'
       }
     ]
   }

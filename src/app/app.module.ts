@@ -18,8 +18,9 @@ import { ConfigService } from './services/config.service';
 import { CacheService } from './services/cache.service';
 import { DataService } from './services/data.service';
 import { GetListService } from './services/get-list.service';
-import { from } from 'rxjs';
-
+import { AuthGuardService } from './services/auth/auth-guard.service';
+// import { PhotoViewer } from '@ionic-native/photo-viewer';
+import { NgxIonicImageViewerModule } from 'ngx-ionic-image-viewer';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -29,15 +30,18 @@ import { from } from 'rxjs';
     HttpClientModule,
     BrowserAnimationsModule,
     HttpModule, HttpClientModule, FormsModule, ReactiveFormsModule,
+    NgxIonicImageViewerModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
     ConfigService,
     CacheService,
+    AuthGuardService,
     DataService,
     GetListService,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    // PhotoViewer,
   ],
   bootstrap: [AppComponent]
 })

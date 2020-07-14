@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Location } from "@angular/common";
 import { from } from 'rxjs';
 import { trigger, state, transition, keyframes, animate, style } from '@angular/animations';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -37,7 +38,7 @@ export class LoginPage implements OnInit {
   email:any;
   password:any;
   constructor(private location: Location, private router: Router,
-    private getListService: GetListService, private form: FormBuilder) {
+    private getListService: GetListService, private form: FormBuilder,public toastController: ToastController) {
 
   }
 
@@ -53,13 +54,14 @@ export class LoginPage implements OnInit {
 
     this.getListService.Login(logindata).subscribe(
       rdata => {
-        console.log(rdata.Success, "rdata.Success")
+        localStorage.setItem('userData', JSON.stringify(rdata));
         if(rdata.Success === true){
-          console.log(rdata, "rdata")
+          this.successToast();
           this.router.navigate(['/home']);
         }
       },
       error => {
+        this.errorToast();
         console.log("error is" + error)
       }
     )
@@ -67,5 +69,25 @@ export class LoginPage implements OnInit {
   
   signUp() {
     this.router.navigate(['/signup']);
+  }
+
+  async errorToast() {
+    const toast = await this.toastController.create({
+      message: 'Something went wrong!!.',
+      duration: 2000,
+      color:'warning',
+      position:'middle'
+    });
+    toast.present();
+  }
+
+  async successToast() {
+    const toast = await this.toastController.create({
+      message: 'Login Successful!.',
+      duration: 2000,
+      color:'success',
+      position:'top'
+    });
+    toast.present();
   }
 }

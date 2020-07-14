@@ -1,18 +1,21 @@
 .masters{
     --background: linear-gradient(to right, 
-    #2e658a 60% 60%, white 40% 40%);
+    #2e658a 60% 60%, #dbebec 40% 40%);
 }
-// .arrow-icon{
-//     color: rgb(63, 8, 8) !important;    // font-size: 1.4em;
-// }
+
 .services{
     color: #fff;
     font-size: 1.5em;
-    margin-top: 5px;
+    margin-top: 30px;
 }
-// .ion-list {
-//     background: none;
-// }
-// .input-wrapper{
-//     background-color: saddlebrown;
-// }
+
+ion-icon{
+    color: #fff;
+    font-size: x-large;
+    margin:10px;
+}
+
+.ion-text-justify h3{
+    padding-top: 15%;
+    color: #255c84;
+}

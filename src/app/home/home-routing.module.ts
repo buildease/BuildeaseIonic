@@ -17,10 +17,6 @@ const routes: Routes = [
         loadChildren:'../pages/feed/feed.module#FeedPageModule'
       },
       {
-        path:'notifications',
-        loadChildren:'../pages/notifications/notifications.module#NotificationsPageModule'
-      },
-      {
         path:'messages',
         loadChildren:'../pages/messages/messages.module#MessagesPageModule'
       },
